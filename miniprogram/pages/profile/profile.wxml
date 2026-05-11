@@ -1,0 +1,48 @@
+<view class="page">
+  <!-- 用户信息 -->
+  <view class="card user-card">
+    <view class="user-avatar">
+      <text class="avatar-text">{{userIdShort}}</text>
+    </view>
+    <view class="user-info">
+      <text class="user-id-label">用户ID</text>
+      <text class="user-id-value">{{userId}}</text>
+    </view>
+  </view>
+
+  <!-- 菜单列表 -->
+  <view class="menu-list">
+    <view class="menu-item" bindtap="goReportList">
+      <view class="menu-icon-wrap icon-report">
+        <text class="menu-icon-text">报告</text>
+      </view>
+      <text class="menu-text">体检报告</text>
+      <text class="menu-arrow">›</text>
+    </view>
+    <view class="menu-item" bindtap="goMemberList">
+      <view class="menu-icon-wrap icon-member">
+        <text class="menu-icon-text">成员</text>
+      </view>
+      <text class="menu-text">家庭成员管理</text>
+      <text class="menu-arrow">›</text>
+    </view>
+    <view class="menu-item" bindtap="goGroupManage">
+      <view class="menu-icon-wrap icon-group">
+        <text class="menu-icon-text">家庭</text>
+      </view>
+      <text class="menu-text">家庭组管理</text>
+      <text class="menu-arrow">›</text>
+    </view>
+  </view>
+
+  <!-- 关于 -->
+  <view class="about">
+    <text class="about-text">个人医疗助手 v1.0.0</text>
+    <text class="about-text">AI 驱动的家庭健康管理</text>
+  </view>
+
+  <!-- 退出 -->
+  <view class="logout-area">
+    <button class="btn-logout" bindtap="resetApp">重置数据</button>
+  </view>
+</view>

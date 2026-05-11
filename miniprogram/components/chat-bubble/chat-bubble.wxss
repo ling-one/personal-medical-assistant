@@ -1,0 +1,95 @@
+.bubble-container {
+  display: flex;
+  align-items: flex-start;
+  padding: 12rpx 24rpx;
+  max-width: 100%;
+  animation: fadeIn 0.25s ease forwards;
+}
+
+.bubble-container.user {
+  flex-direction: row-reverse;
+}
+
+/* 头像 */
+.bubble-avatar {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  font-weight: 700;
+  margin: 0 16rpx;
+  flex-shrink: 0;
+  color: #fff;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.08);
+}
+
+.bubble-avatar.user {
+  background: linear-gradient(135deg, #07C160, #05a350);
+}
+
+.bubble-avatar.assistant {
+  background: linear-gradient(135deg, #8e9eab, #7a8a98);
+}
+
+.bubble-content {
+  max-width: 68%;
+}
+
+/* 气泡文本 */
+.bubble-text {
+  font-size: 28rpx;
+  line-height: 1.65;
+  padding: 20rpx 26rpx;
+  border-radius: 18rpx;
+  word-break: break-word;
+  position: relative;
+  transition: all 0.15s ease;
+}
+
+.user .bubble-text {
+  background: linear-gradient(135deg, #07C160, #06b058);
+  color: #fff;
+  border-bottom-right-radius: 6rpx;
+  box-shadow: 0 4rpx 16rpx rgba(7, 193, 96, 0.2);
+}
+
+.assistant .bubble-text {
+  background: #fff;
+  color: #1A1A1A;
+  border-bottom-left-radius: 6rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.06);
+}
+
+/* 时间戳 */
+.bubble-time {
+  font-size: 20rpx;
+  color: #ccc;
+  display: block;
+  margin-top: 8rpx;
+  padding: 0 10rpx;
+}
+
+.user .bubble-time {
+  text-align: right;
+}
+
+/* 流式光标 */
+.cursor-blink {
+  font-size: 24rpx;
+  color: #07C160;
+  animation: blink 1s steps(1) infinite;
+  margin-left: 2rpx;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6rpx); }
+  to { opacity: 1; transform: translateY(0); }
+}

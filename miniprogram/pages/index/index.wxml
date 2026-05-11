@@ -1,0 +1,53 @@
+<view class="page">
+  <!-- 未初始化：引导创建/加入家庭组 -->
+  <block wx:if="{{!groupLoaded}}">
+    <view class="onboarding">
+      <view class="logo-area">
+        <text class="logo-icon">🏥</text>
+        <text class="logo-title">个人医疗助手</text>
+        <text class="logo-desc">管理家人健康，AI 智能问答</text>
+      </view>
+      <view class="onboarding-actions">
+        <button class="btn-primary" bindtap="goCreateGroup">创建家庭组</button>
+        <button class="btn-secondary" bindtap="goJoinGroup">加入已有家庭组</button>
+      </view>
+    </view>
+  </block>
+
+  <!-- 已初始化：首页内容 -->
+  <block wx:else>
+    <view class="header">
+      <view class="header-info">
+        <text class="group-name">{{groupName}}</text>
+        <text class="member-count">{{members.length}} 位成员</text>
+      </view>
+      <view class="header-actions">
+        <button class="action-btn" bindtap="goAddMember">+ 添加成员</button>
+        <button class="action-btn" bindtap="goUploadReport">上传报告</button>
+      </view>
+    </view>
+
+    <!-- 成员列表 -->
+    <view class="member-list">
+      <member-card
+        wx:for="{{members}}"
+        wx:key="member_id"
+        name="{{item.name}}"
+        relationship="{{item.relationship}}"
+        gender="{{item.gender}}"
+        age="{{item.age}}"
+        height="{{item.height}}"
+        weight="{{item.weight}}"
+        bmi="{{item.bmi}}"
+        vitalSigns="{{item.vital_signs}}"
+        bind:tap="goMemberDetail"
+        data-member-id="{{item.member_id}}"
+      />
+    </view>
+
+    <!-- 空状态 -->
+    <view class="empty-state" wx:if="{{members.length === 0}}">
+      <text>还没有家庭成员，点击上方添加</text>
+    </view>
+  </block>
+</view>

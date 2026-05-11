@@ -1,0 +1,20 @@
+<view class="page">
+  <view class="card">
+    <view class="form-group">
+      <text class="form-label">输入9位家庭组号</text>
+      <input
+        class="input-field group-input"
+        placeholder="000000000"
+        value="{{groupNumber}}"
+        bindinput="onInput"
+        maxlength="9"
+        type="number"
+      />
+    </view>
+    <text class="form-tip">请向创建者获取家庭组号</text>
+  </view>
+
+  <view class="submit-area">
+    <button class="btn-primary" bindtap="joinGroup">加入家庭组</button>
+  </view>
+</view>

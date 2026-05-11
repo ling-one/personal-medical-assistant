@@ -1,0 +1,44 @@
+<view class="page">
+  <!-- 成员选择 -->
+  <view class="member-select-bar">
+    <picker mode="selector" range="{{memberNames}}" value="{{selectedIndex}}" bindchange="onMemberChange">
+      <view class="picker-display">
+        <text class="pick-label">查看成员：</text>
+        <text class="pick-value">{{selectedMember ? selectedMember.name : '请选择成员'}}</text>
+        <text class="arrow">›</text>
+      </view>
+    </picker>
+  </view>
+
+  <!-- 上传区域 -->
+  <view class="card upload-card" wx:if="{{selectedMember}}" bindtap="uploadReport">
+    <text class="upload-icon">+</text>
+    <text class="upload-text">拍摄或选择体检报告图片</text>
+    <text class="upload-desc">支持 JPG/PNG 格式，自动 OCR 识别</text>
+  </view>
+
+  <!-- 报告列表 -->
+  <view class="report-list" wx:if="{{selectedMember}}">
+    <view class="section-title">历史报告</view>
+
+    <view class="empty-state" wx:if="{{reports.length === 0}}">
+      <text>暂无报告记录</text>
+    </view>
+
+    <view
+      class="report-item"
+      wx:for="{{reports}}"
+      wx:key="report_id"
+      bindtap="viewReport"
+      data-report="{{item}}"
+    >
+      <view class="report-info">
+        <text class="report-name">{{item.filename}}</text>
+        <text class="report-desc">
+          {{item.analysis ? '已分析' : '仅识别'}} · {{item.created_at_formatted}}
+        </text>
+      </view>
+      <text class="report-arrow">›</text>
+    </view>
+  </view>
+</view>

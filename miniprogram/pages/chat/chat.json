@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "chat-bubble": "../../components/chat-bubble/chat-bubble",
+    "member-selector": "../../components/member-selector/member-selector"
+  },
+  "navigationBarTitleText": "AI 健康助手"
+}

@@ -1,0 +1,21 @@
+<view class="vital-signs-card" wx:if="{{hasSigns}}">
+  <view class="section-title">生命体征</view>
+  <view class="signs-grid">
+    <view class="sign-item" wx:if="{{systolic || diastolic}}">
+      <text class="sign-value">{{systolic || '--'}}/{{diastolic || '--'}}</text>
+      <text class="sign-label">血压 (mmHg)</text>
+    </view>
+    <view class="sign-item" wx:if="{{heartRate}}">
+      <text class="sign-value">{{heartRate}}</text>
+      <text class="sign-label">心率 (次/分)</text>
+    </view>
+    <view class="sign-item" wx:if="{{temperature}}">
+      <text class="sign-value">{{temperature}}°</text>
+      <text class="sign-label">体温</text>
+    </view>
+    <view class="sign-item" wx:if="{{oxygen}}">
+      <text class="sign-value">{{oxygen}}%</text>
+      <text class="sign-label">血氧</text>
+    </view>
+  </view>
+</view>

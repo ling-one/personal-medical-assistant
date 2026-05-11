@@ -1,0 +1,132 @@
+/* 全局样式 - 优化版 */
+page {
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  background-color: #F2F4F7;
+  color: #1A1A1A;
+  font-size: 28rpx;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 通用按钮 */
+.btn-primary {
+  background: linear-gradient(135deg, #07C160 0%, #05a350 100%);
+  color: #fff;
+  border-radius: 16rpx;
+  padding: 26rpx 48rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+  text-align: center;
+  border: none;
+  width: 100%;
+  box-shadow: 0 4rpx 16rpx rgba(7, 193, 96, 0.25);
+  transition: all 0.2s ease;
+}
+
+.btn-primary:active {
+  background: linear-gradient(135deg, #06ad56 0%, #048a42 100%);
+  box-shadow: 0 2rpx 8rpx rgba(7, 193, 96, 0.2);
+  transform: translateY(1rpx);
+}
+
+.btn-secondary {
+  background: #fff;
+  color: #07C160;
+  border: 2rpx solid rgba(7, 193, 96, 0.3);
+  border-radius: 16rpx;
+  padding: 24rpx 48rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+  text-align: center;
+  width: 100%;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:active {
+  background: #f0fff4;
+  border-color: rgba(7, 193, 96, 0.5);
+}
+
+/* 卡片 */
+.card {
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 32rpx;
+  margin: 20rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.04);
+  transition: transform 0.15s ease;
+}
+
+/* 输入框 */
+.input-field {
+  border: 1rpx solid #E8EAED;
+  border-radius: 14rpx;
+  padding: 24rpx 30rpx;
+  font-size: 28rpx;
+  background: #fff;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-field:focus {
+  border-color: #07C160;
+  box-shadow: 0 0 0 3rpx rgba(7, 193, 96, 0.1);
+}
+
+/* 表单标签 */
+.form-label {
+  font-size: 26rpx;
+  color: #666;
+  font-weight: 500;
+  margin-bottom: 12rpx;
+  display: block;
+}
+
+/* 空状态 */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 200rpx;
+  color: #999;
+}
+
+.empty-state text {
+  font-size: 28rpx;
+  margin-top: 20rpx;
+}
+
+/* 加载 */
+.loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60rpx 0;
+}
+
+/* 安全区 */
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* 全局动画 */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10rpx); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20rpx); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease forwards;
+}

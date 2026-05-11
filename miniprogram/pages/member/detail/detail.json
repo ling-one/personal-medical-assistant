@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "vital-signs-card": "../../../components/vital-signs-card/vital-signs-card"
+  },
+  "navigationBarTitleText": "成员详情"
+}

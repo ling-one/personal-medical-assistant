@@ -1,0 +1,55 @@
+<view class="page">
+  <view class="card">
+    <view class="form-group">
+      <text class="form-label">姓名 *</text>
+      <input class="input-field" placeholder="请输入姓名" value="{{form.name}}" bindinput="onFieldInput" data-field="name" />
+    </view>
+
+    <view class="form-group">
+      <text class="form-label">关系 *</text>
+      <picker mode="selector" range="{{relationList}}" value="{{relationIndex}}" bindchange="onRelationChange">
+        <view class="picker-value {{relationIndex === -1 ? 'placeholder' : ''}}">
+          {{relationIndex >= 0 ? relationList[relationIndex] : '请选择关系'}}
+        </view>
+      </picker>
+    </view>
+
+    <view class="form-group">
+      <text class="form-label">性别 *</text>
+      <view class="radio-group">
+        <view class="radio-item {{form.gender === '男' ? 'active' : ''}}" bindtap="setGender" data-value="男">
+          <text>男</text>
+        </view>
+        <view class="radio-item {{form.gender === '女' ? 'active' : ''}}" bindtap="setGender" data-value="女">
+          <text>女</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="form-group">
+      <text class="form-label">出生日期 *</text>
+      <picker mode="date" value="{{form.birthDate}}" start="1900-01-01" end="{{today}}" bindchange="onDateChange">
+        <view class="picker-value {{!form.birthDate ? 'placeholder' : ''}}">
+          {{form.birthDate || '请选择出生日期'}}
+        </view>
+      </picker>
+    </view>
+
+    <view class="form-row">
+      <view class="form-group half">
+        <text class="form-label">身高 (cm)</text>
+        <input class="input-field" placeholder="选填" value="{{form.height}}" bindinput="onFieldInput" data-field="height" type="digit" />
+      </view>
+      <view class="form-group half">
+        <text class="form-label">体重 (kg)</text>
+        <input class="input-field" placeholder="选填" value="{{form.weight}}" bindinput="onFieldInput" data-field="weight" type="digit" />
+      </view>
+    </view>
+  </view>
+
+  <view class="submit-area">
+    <button class="btn-primary" bindtap="saveMember">
+      {{isEdit ? '保存修改' : '添加成员'}}
+    </button>
+  </view>
+</view>

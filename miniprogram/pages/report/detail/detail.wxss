@@ -1,0 +1,167 @@
+.page {
+  padding-bottom: 40rpx;
+  background: #F2F4F7;
+}
+
+/* ================= 上传卡片 ================= */
+.upload-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80rpx 30rpx;
+  border: 2rpx dashed rgba(7, 193, 96, 0.25);
+  background: linear-gradient(135deg, #FAFFFC, #F0FFF4);
+  border-radius: 20rpx;
+  margin: 20rpx;
+  transition: all 0.2s ease;
+}
+
+.upload-card:active {
+  background: linear-gradient(135deg, #F0FFF4, #E6F7ED);
+  border-color: rgba(7, 193, 96, 0.4);
+}
+
+.upload-icon {
+  font-size: 64rpx;
+  margin-bottom: 20rpx;
+}
+
+.upload-text {
+  font-size: 30rpx;
+  color: #07C160;
+  font-weight: 600;
+  margin-bottom: 10rpx;
+}
+
+.upload-desc {
+  font-size: 24rpx;
+  color: #aaa;
+}
+
+/* ================= 章节 ================= */
+.section-title {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #1A1A1A;
+  margin-bottom: 24rpx;
+  display: flex;
+  align-items: center;
+  gap: 10rpx;
+}
+
+.section-title::before {
+  content: '';
+  width: 6rpx;
+  height: 26rpx;
+  background: linear-gradient(180deg, #07C160, #05a350);
+  border-radius: 3rpx;
+}
+
+.summary-text {
+  font-size: 28rpx;
+  color: #555;
+  line-height: 1.8;
+}
+
+/* 标签 */
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14rpx;
+}
+
+.tag {
+  background: #F0FFF4;
+  color: #07C160;
+  border-radius: 10rpx;
+  padding: 10rpx 22rpx;
+  font-size: 24rpx;
+  font-weight: 500;
+  border: 1rpx solid rgba(7, 193, 96, 0.1);
+}
+
+.tag-warn {
+  background: #FFF8F0;
+  color: #FA8C16;
+  border-color: rgba(250, 140, 22, 0.1);
+}
+
+/* ================= 建议列表 ================= */
+.suggestion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.suggestion-row {
+  display: flex;
+  align-items: flex-start;
+  line-height: 1.7;
+  background: #FAFAFA;
+  padding: 16rpx 20rpx;
+  border-radius: 12rpx;
+  border-left: 4rpx solid #07C160;
+}
+
+.suggestion-num {
+  font-size: 26rpx;
+  color: #07C160;
+  font-weight: 700;
+  margin-right: 12rpx;
+  flex-shrink: 0;
+  min-width: 36rpx;
+}
+
+.suggestion-text {
+  font-size: 26rpx;
+  color: #444;
+}
+
+/* ================= OCR 原文 ================= */
+.ocr-text {
+  font-size: 24rpx;
+  color: #888;
+  line-height: 1.8;
+  background: #F8F9FB;
+  padding: 24rpx;
+  border-radius: 14rpx;
+  max-height: 400rpx;
+  overflow-y: auto;
+  word-break: break-all;
+  border: 1rpx solid #F0F0F0;
+}
+
+/* ================= 咨询入口 ================= */
+.chat-card-content {
+  display: flex;
+  align-items: center;
+  padding: 8rpx 0;
+}
+
+.chat-icon {
+  width: 56rpx;
+  height: 56rpx;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #07C160, #05a350);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  margin-right: 20rpx;
+  flex-shrink: 0;
+  box-shadow: 0 4rpx 12rpx rgba(7, 193, 96, 0.2);
+}
+
+.chat-text {
+  flex: 1;
+  font-size: 28rpx;
+  color: #07C160;
+  font-weight: 600;
+}
+
+.arrow {
+  font-size: 32rpx;
+  color: #ddd;
+  font-weight: 300;
+}

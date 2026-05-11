@@ -1,0 +1,17 @@
+<view class="member-selector" wx:if="{{members.length > 0}}">
+  <scroll-view class="selector-scroll" scroll-x>
+    <view
+      class="selector-item {{selectedMember && selectedMember.member_id === item.member_id ? 'active' : ''}}"
+      wx:for="{{members}}"
+      wx:key="member_id"
+      bindtap="onSelect"
+      data-member="{{item}}"
+    >
+      <view class="sel-avatar {{item.gender === '男' ? 'male' : 'female'}}">
+        <text>{{item.name ? item.name.charAt(0) : '?'}}</text>
+      </view>
+      <text class="sel-name">{{item.name}}</text>
+    </view>
+  </scroll-view>
+  <text class="selector-hint" wx:if="{{!selectedMember}}">选择成员后AI可结合档案回答</text>
+</view>

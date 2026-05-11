@@ -1,0 +1,22 @@
+.page {
+  padding: 30rpx;
+  background: #F2F4F7;
+  min-height: 100vh;
+}
+
+.card {
+  margin: 0 0 24rpx;
+  padding: 36rpx 32rpx;
+}
+
+.form-tip {
+  font-size: 24rpx;
+  color: #aaa;
+  display: block;
+  margin-top: 16rpx;
+  line-height: 1.5;
+}
+
+.submit-area {
+  padding: 40rpx 0;
+}

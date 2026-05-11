@@ -1,0 +1,80 @@
+.page {
+  padding: 24rpx;
+  background: #F2F4F7;
+  min-height: 100vh;
+}
+
+.card {
+  margin: 0 0 24rpx;
+}
+
+.form-group {
+  margin-bottom: 36rpx;
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+.form-row {
+  display: flex;
+  gap: 24rpx;
+}
+
+.form-group.half {
+  flex: 1;
+}
+
+/* 选择器 */
+.picker-value {
+  border: 1rpx solid #E8EAED;
+  border-radius: 14rpx;
+  padding: 24rpx 30rpx;
+  font-size: 28rpx;
+  background: #fff;
+  color: #1A1A1A;
+  transition: all 0.2s ease;
+}
+
+.picker-value:active {
+  background: #FAFAFA;
+}
+
+.picker-value.placeholder {
+  color: #bbb;
+}
+
+/* 单选组 */
+.radio-group {
+  display: flex;
+  gap: 20rpx;
+}
+
+.radio-item {
+  flex: 1;
+  text-align: center;
+  padding: 24rpx 0;
+  border: 1rpx solid #E8EAED;
+  border-radius: 14rpx;
+  font-size: 28rpx;
+  color: #666;
+  background: #fff;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.radio-item:active {
+  background: #FAFAFA;
+}
+
+.radio-item.active {
+  border-color: #07C160;
+  color: #07C160;
+  background: #F0FFF4;
+  box-shadow: 0 0 0 3rpx rgba(7, 193, 96, 0.08);
+}
+
+/* 提交区 */
+.submit-area {
+  padding: 20rpx 0 60rpx;
+}

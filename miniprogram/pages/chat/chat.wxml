@@ -1,0 +1,101 @@
+<view class="page">
+  <!-- 成员选择器 -->
+  <member-selector
+    members="{{members}}"
+    selectedMember="{{selectedMember}}"
+    bind:select="onMemberSelect"
+  />
+
+  <!-- 对话区域 -->
+  <scroll-view
+    class="chat-list"
+    scroll-y
+    scroll-into-view="{{scrollToId}}"
+    scroll-with-animation
+    enhanced
+    show-scrollbar="{{false}}"
+    bind:touchmove="preventTouch"
+  >
+    <!-- 空状态 -->
+    <view class="empty-chat" wx:if="{{messages.length === 0}}">
+      <view class="empty-icon-wrap">
+        <text class="empty-icon">💬</text>
+      </view>
+      <text class="empty-text">你好！我是 AI 健康助手</text>
+      <text class="empty-desc">你可以问我关于健康、疾病、用药等方面的问题</text>
+      <view class="suggestion-list">
+        <view
+          class="suggestion-item"
+          wx:for="{{suggestions}}"
+          wx:key="index"
+          bindtap="sendSuggestion"
+          data-text="{{item}}"
+        >
+          <text class="suggestion-dot">✦</text>
+          <text class="suggestion-text">{{item}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 历史加载中 -->
+    <view class="history-loading" wx:if="{{historyLoading}}">
+      <view class="loading-bubble">
+        <view class="loading-dots">
+          <view class="dot"></view>
+          <view class="dot"></view>
+          <view class="dot"></view>
+        </view>
+      </view>
+      <text class="loading-text">加载历史记录...</text>
+    </view>
+
+    <!-- 消息列表 -->
+    <view wx:for="{{messages}}" wx:key="index">
+      <chat-bubble
+        role="{{item.role}}"
+        content="{{item.content}}"
+        timestamp="{{item.timestamp}}"
+        showCursor="{{item.role === 'assistant' && index === messages.length - 1 && showStreamingCursor}}"
+        id="msg-{{index}}"
+      />
+    </view>
+
+    <!-- 加载指示器（等待首 token） -->
+    <view class="loading-msg" wx:if="{{loading && !showStreamingCursor}}">
+      <view class="loading-bubble">
+        <view class="loading-dots">
+          <view class="dot"></view>
+          <view class="dot"></view>
+          <view class="dot"></view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 底部锚点 -->
+    <view id="bottom-anchor" style="height: 20rpx;"></view>
+  </scroll-view>
+
+  <!-- 输入区域 -->
+  <view class="input-bar {{safeBottom ? 'safe-bottom' : ''}}">
+    <view class="input-wrapper">
+      <input
+        class="msg-input"
+        placeholder="输入您的健康问题..."
+        placeholder-class="msg-input-placeholder"
+        value="{{inputValue}}"
+        bindinput="onInput"
+        bindconfirm="sendMessage"
+        confirm-type="send"
+        disabled="{{loading}}"
+        cursor-spacing="120"
+      />
+    </view>
+    <button
+      class="send-btn {{inputValue ? 'active' : ''}}"
+      bindtap="sendMessage"
+      disabled="{{!inputValue || loading}}"
+    >
+      <text class="send-icon">➤</text>
+    </button>
+  </view>
+</view>

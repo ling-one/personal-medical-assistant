@@ -1,0 +1,225 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  background: #F8F9FB;
+}
+
+/* ================= 对话列表 ================= */
+.chat-list {
+  flex: 1;
+  padding: 20rpx 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ================= 空对话 ================= */
+.empty-chat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 140rpx 50rpx 60rpx;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.empty-icon-wrap {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e6f7ed, #f0fff4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32rpx;
+  box-shadow: 0 8rpx 24rpx rgba(7, 193, 96, 0.1);
+}
+
+.empty-icon {
+  font-size: 64rpx;
+}
+
+.empty-text {
+  font-size: 34rpx;
+  color: #1A1A1A;
+  font-weight: 600;
+  margin-bottom: 12rpx;
+}
+
+.empty-desc {
+  font-size: 26rpx;
+  color: #999;
+  margin-bottom: 48rpx;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* ================= 建议按钮 ================= */
+.suggestion-list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx;
+  justify-content: center;
+}
+
+.suggestion-item {
+  background: #fff;
+  border: 1rpx solid rgba(7, 193, 96, 0.15);
+  border-radius: 32rpx;
+  padding: 16rpx 28rpx;
+  font-size: 26rpx;
+  color: #07C160;
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
+}
+
+.suggestion-item:active {
+  background: #f0fff4;
+  border-color: rgba(7, 193, 96, 0.3);
+  transform: scale(0.97);
+}
+
+.suggestion-dot {
+  font-size: 18rpx;
+  opacity: 0.6;
+}
+
+.suggestion-text {
+  font-size: 26rpx;
+}
+
+/* ================= 加载消息 ================= */
+.loading-msg {
+  padding: 16rpx 30rpx;
+  display: flex;
+}
+
+.loading-bubble {
+  background: #fff;
+  border-radius: 18rpx;
+  border-bottom-left-radius: 4rpx;
+  padding: 20rpx 28rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.04);
+  margin-left: 72rpx;
+}
+
+.loading-dots {
+  display: flex;
+  align-items: center;
+  gap: 10rpx;
+}
+
+.dot {
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 50%;
+  background: #ccc;
+  animation: bounce 1.4s ease-in-out infinite both;
+}
+
+.dot:nth-child(1) { animation-delay: -0.32s; }
+.dot:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes bounce {
+  0%, 80%, 100% { transform: scale(0.6); opacity: 0.5; }
+  40% { transform: scale(1); opacity: 1; background: #07C160; }
+}
+
+/* ================= 输入栏 ================= */
+.input-bar {
+  display: flex;
+  align-items: center;
+  padding: 16rpx 24rpx 24rpx;
+  background: #fff;
+  border-top: 1rpx solid rgba(0, 0, 0, 0.04);
+  flex-shrink: 0;
+  box-shadow: 0 -4rpx 20rpx rgba(0, 0, 0, 0.02);
+}
+
+.input-wrapper {
+  flex: 1;
+  background: #F2F4F7;
+  border-radius: 40rpx;
+  padding: 0 32rpx;
+  margin-right: 16rpx;
+  transition: all 0.2s ease;
+}
+
+.input-wrapper:focus-within {
+  background: #EEF7F1;
+  box-shadow: 0 0 0 2rpx rgba(7, 193, 96, 0.15);
+}
+
+.msg-input {
+  height: 76rpx;
+  font-size: 28rpx;
+  line-height: 76rpx;
+  color: #1A1A1A;
+}
+
+.msg-input-placeholder {
+  color: #bbb;
+  font-size: 28rpx;
+}
+
+.send-btn {
+  width: 76rpx;
+  height: 76rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #E8EAED;
+  color: #bbb;
+  border-radius: 50%;
+  font-size: 28rpx;
+  padding: 0;
+  flex-shrink: 0;
+  border: none;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.06);
+}
+
+.send-btn.active {
+  background: linear-gradient(135deg, #07C160, #05a350);
+  color: #fff;
+  box-shadow: 0 4rpx 16rpx rgba(7, 193, 96, 0.35);
+}
+
+.send-btn.active:active {
+  transform: scale(0.92);
+  box-shadow: 0 2rpx 8rpx rgba(7, 193, 96, 0.25);
+}
+
+.send-btn[disabled] {
+  opacity: 0.5;
+}
+
+.send-icon {
+  font-size: 28rpx;
+  margin-left: 2rpx;
+}
+
+/* ================= 流式光标（已整合到气泡中，此样式备用） ================= */
+.streaming-cursor {
+  padding: 0 8rpx;
+}
+
+.cursor-blink {
+  font-size: 28rpx;
+  color: #07C160;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10rpx); }
+  to { opacity: 1; transform: translateY(0); }
+}

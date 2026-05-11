@@ -1,0 +1,78 @@
+<view class="page">
+  <!-- 基本信息卡片 -->
+  <view class="card profile-card">
+    <view class="avatar-area">
+      <view class="avatar {{member.gender === '男' ? 'male' : 'female'}}">
+        <text>{{member.name ? member.name.charAt(0) : '?'}}</text>
+      </view>
+      <view class="profile-info">
+        <text class="name">{{member.name}}</text>
+        <text class="basic-info">{{member.relationship}} · {{member.gender}} · {{member.age || '--'}}岁</text>
+        <text class="basic-info" wx:if="{{member.height || member.weight}}">
+          {{member.height ? member.height + 'cm' : ''}} {{member.weight ? member.weight + 'kg' : ''}}
+          <text wx:if="{{member.bmi}}"> · BMI {{member.bmi}}</text>
+        </text>
+      </view>
+    </view>
+    <view class="action-row">
+      <button class="action-btn" bindtap="goEdit">
+        <text class="action-icon">编辑</text>
+      </button>
+      <button class="action-btn" bindtap="goUploadReport">
+        <text class="action-icon">报告</text>
+      </button>
+      <button class="action-btn" bindtap="goChat">
+        <text class="action-icon">咨询</text>
+      </button>
+    </view>
+  </view>
+
+  <!-- 生命体征 -->
+  <vital-signs-card vitalSigns="{{member.vital_signs}}" />
+
+  <!-- 病史信息 -->
+  <view class="card" wx:if="{{member.medical_history}}">
+    <view class="section-title">病史信息</view>
+
+    <view class="info-row" wx:if="{{member.medical_history.chronic_diseases && member.medical_history.chronic_diseases.length > 0}}">
+      <text class="info-label">慢性病</text>
+      <view class="tag-list">
+        <text class="tag" wx:for="{{member.medical_history.chronic_diseases}}" wx:key="index">{{item}}</text>
+      </view>
+    </view>
+
+    <view class="info-row" wx:if="{{member.medical_history.allergies && member.medical_history.allergies.length > 0}}">
+      <text class="info-label">过敏史</text>
+      <view class="tag-list">
+        <text class="tag tag-warn" wx:for="{{member.medical_history.allergies}}" wx:key="index">{{item}}</text>
+      </view>
+    </view>
+
+    <view class="info-row" wx:if="{{member.medical_history.medications && member.medical_history.medications.length > 0}}">
+      <text class="info-label">用药</text>
+      <view class="tag-list">
+        <text class="tag tag-blue" wx:for="{{member.medical_history.medications}}" wx:key="index">{{item}}</text>
+      </view>
+    </view>
+
+    <view class="info-row" wx:if="{{member.medical_history.surgeries && member.medical_history.surgeries.length > 0}}">
+      <text class="info-label">手术史</text>
+      <view class="tag-list">
+        <text class="tag tag-red" wx:for="{{member.medical_history.surgeries}}" wx:key="index">{{item}}</text>
+      </view>
+    </view>
+
+    <view class="info-row" wx:if="{{member.medical_history.family_history && member.medical_history.family_history.length > 0}}">
+      <text class="info-label">家族病史</text>
+      <view class="tag-list">
+        <text class="tag tag-orange" wx:for="{{member.medical_history.family_history}}" wx:key="index">{{item}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 操作按钮 -->
+  <view class="bottom-actions">
+    <button class="btn-report" bindtap="goReportList">查看体检报告 →</button>
+    <button class="btn-delete" bindtap="deleteMember">删除成员</button>
+  </view>
+</view>

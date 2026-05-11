@@ -1,0 +1,51 @@
+<view class="page">
+  <!-- 上传区域（未上传时的上传入口） -->
+  <view class="card upload-card" wx:if="{{!reportId}}" bindtap="uploadReport">
+    <text class="upload-icon">+</text>
+    <text class="upload-text">点击上传体检报告</text>
+    <text class="upload-desc">上传后自动进行OCR识别和AI分析</text>
+  </view>
+
+  <!-- 分析结果 -->
+  <block wx:if="{{analysis}}">
+    <!-- 健康概况 -->
+    <view class="card">
+      <view class="section-title">健康概况</view>
+      <text class="summary-text">{{analysis.summary || '暂无分析结果'}}</text>
+    </view>
+
+    <!-- 异常指标 -->
+    <view class="card" wx:if="{{analysis.abnormal_items && analysis.abnormal_items.length > 0}}">
+      <view class="section-title">异常指标</view>
+      <view class="tag-list">
+        <text class="tag tag-warn" wx:for="{{analysis.abnormal_items}}" wx:key="index">{{item}}</text>
+      </view>
+    </view>
+
+    <!-- 健康建议 -->
+    <view class="card" wx:if="{{analysis.suggestions && analysis.suggestions.length > 0}}">
+      <view class="section-title">健康建议</view>
+      <view class="suggestion-list">
+        <view class="suggestion-row" wx:for="{{analysis.suggestions}}" wx:key="index">
+          <text class="suggestion-num">{{index + 1}}.</text>
+          <text class="suggestion-text">{{item}}</text>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <!-- 原始OCR文本 -->
+  <view class="card" wx:if="{{ocrText}}">
+    <view class="section-title">OCR 原文</view>
+    <view class="ocr-text">{{ocrText}}</view>
+  </view>
+
+  <!-- 前往咨询 -->
+  <view class="card" wx:if="{{analysis}}" bindtap="goChat">
+    <view class="chat-card-content">
+      <view class="chat-icon">问</view>
+      <text class="chat-text">向AI咨询这份报告</text>
+      <text class="arrow">›</text>
+    </view>
+  </view>
+</view>

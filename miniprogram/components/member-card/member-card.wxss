@@ -1,0 +1,88 @@
+.member-card {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  margin: 0 24rpx 20rpx;
+  padding: 28rpx 28rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
+}
+
+.member-card:active {
+  background: #FAFAFA;
+  transform: translateY(1rpx);
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.03);
+}
+
+.avatar {
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34rpx;
+  font-weight: 700;
+  color: #fff;
+  margin-right: 24rpx;
+  flex-shrink: 0;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+}
+
+.avatar.male {
+  background: linear-gradient(135deg, #4a90d9, #357abd);
+}
+
+.avatar.female {
+  background: linear-gradient(135deg, #e96d8a, #d45a78);
+}
+
+.info {
+  flex: 1;
+  min-width: 0;
+}
+
+.name-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+
+.name {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #1A1A1A;
+  margin-right: 16rpx;
+}
+
+.relationship {
+  font-size: 22rpx;
+  color: #888;
+  background: #F2F4F7;
+  padding: 4rpx 14rpx;
+  border-radius: 8rpx;
+  font-weight: 500;
+}
+
+.detail-row {
+  font-size: 24rpx;
+  color: #999;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8rpx;
+}
+
+.detail-row text {
+  color: #999;
+}
+
+.arrow {
+  font-size: 32rpx;
+  color: #ddd;
+  margin-left: 16rpx;
+  flex-shrink: 0;
+  font-weight: 300;
+}

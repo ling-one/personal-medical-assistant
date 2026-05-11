@@ -1,0 +1,23 @@
+<view class="member-card">
+  <view class="avatar {{gender === '男' ? 'male' : 'female'}}">
+    <text>{{name ? name.charAt(0) : '?'}}</text>
+  </view>
+  <view class="info">
+    <view class="name-row">
+      <text class="name">{{name}}</text>
+      <text class="relationship">{{relationship}}</text>
+    </view>
+    <view class="detail-row">
+      <text>{{gender}} · {{age || '--'}}岁</text>
+      <text wx:if="{{height || weight}}">
+        <text wx:if="{{height}}">{{height}}cm</text>
+        <text wx:if="{{height && weight}}"> </text>
+        <text wx:if="{{weight}}">{{weight}}kg</text>
+      </text>
+    </view>
+    <view class="detail-row" wx:if="{{bmi}}">
+      <text>BMI {{bmi}}</text>
+    </view>
+  </view>
+  <view class="arrow">›</view>
+</view>

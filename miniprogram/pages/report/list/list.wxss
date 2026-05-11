@@ -1,0 +1,135 @@
+.page {
+  padding-bottom: 40rpx;
+  background: #F2F4F7;
+}
+
+/* ================= 成员选择栏 ================= */
+.member-select-bar {
+  margin: 20rpx;
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 8rpx 24rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.04);
+}
+
+.picker-display {
+  display: flex;
+  align-items: center;
+  padding: 16rpx 0;
+}
+
+.pick-label {
+  font-size: 26rpx;
+  color: #999;
+  margin-right: 12rpx;
+  font-weight: 500;
+}
+
+.pick-value {
+  flex: 1;
+  font-size: 28rpx;
+  color: #1A1A1A;
+  font-weight: 500;
+}
+
+.arrow {
+  font-size: 32rpx;
+  color: #ccc;
+  font-weight: 300;
+}
+
+/* ================= 上传卡片 ================= */
+.upload-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 70rpx 30rpx;
+  border: 2rpx dashed rgba(7, 193, 96, 0.25);
+  background: linear-gradient(135deg, #FAFFFC, #F0FFF4);
+  border-radius: 20rpx;
+  margin: 20rpx;
+  transition: all 0.2s ease;
+}
+
+.upload-card:active {
+  background: linear-gradient(135deg, #F0FFF4, #E6F7ED);
+  border-color: rgba(7, 193, 96, 0.4);
+}
+
+.upload-icon {
+  font-size: 60rpx;
+  margin-bottom: 20rpx;
+}
+
+.upload-text {
+  font-size: 30rpx;
+  color: #07C160;
+  font-weight: 600;
+  margin-bottom: 10rpx;
+}
+
+.upload-desc {
+  font-size: 24rpx;
+  color: #aaa;
+}
+
+/* ================= 报告列表 ================= */
+.section-title {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #1A1A1A;
+  margin: 32rpx 24rpx 20rpx;
+  display: flex;
+  align-items: center;
+  gap: 10rpx;
+}
+
+.section-title::before {
+  content: '';
+  width: 6rpx;
+  height: 26rpx;
+  background: linear-gradient(180deg, #07C160, #05a350);
+  border-radius: 3rpx;
+}
+
+.report-item {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  margin: 0 24rpx 16rpx;
+  padding: 28rpx 28rpx;
+  border-radius: 18rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
+}
+
+.report-item:active {
+  background: #FAFAFA;
+  transform: translateY(1rpx);
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.02);
+}
+
+.report-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.report-name {
+  font-size: 28rpx;
+  color: #1A1A1A;
+  display: block;
+  margin-bottom: 8rpx;
+  font-weight: 500;
+}
+
+.report-desc {
+  font-size: 24rpx;
+  color: #aaa;
+}
+
+.report-arrow {
+  font-size: 32rpx;
+  color: #ddd;
+  margin-left: 16rpx;
+  font-weight: 300;
+}

@@ -1,0 +1,124 @@
+.page {
+  min-height: 100vh;
+}
+
+/* ================= 引导页 ================= */
+.onboarding {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 180rpx;
+  padding-bottom: 100rpx;
+}
+
+.logo-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 140rpx;
+}
+
+.logo-icon {
+  font-size: 120rpx;
+  margin-bottom: 32rpx;
+  filter: drop-shadow(0 8rpx 16rpx rgba(7, 193, 96, 0.2));
+}
+
+.logo-title {
+  font-size: 48rpx;
+  font-weight: 700;
+  color: #1A1A1A;
+  margin-bottom: 16rpx;
+  letter-spacing: 2rpx;
+}
+
+.logo-desc {
+  font-size: 28rpx;
+  color: #888;
+  font-weight: 400;
+}
+
+.onboarding-actions {
+  width: 560rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 28rpx;
+}
+
+/* ================= 首页头部 ================= */
+.header {
+  background: linear-gradient(160deg, #07C160 0%, #06ad56 60%, #059944 100%);
+  padding: 40rpx 30rpx 60rpx;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: -40rpx;
+  left: -10%;
+  width: 120%;
+  height: 80rpx;
+  background: #F2F4F7;
+  border-radius: 50% 50% 0 0;
+}
+
+.header-info {
+  margin-bottom: 36rpx;
+  position: relative;
+  z-index: 1;
+}
+
+.group-name {
+  font-size: 42rpx;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 10rpx;
+  text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.1);
+}
+
+.member-count {
+  font-size: 26rpx;
+  opacity: 0.9;
+  font-weight: 400;
+}
+
+.header-actions {
+  display: flex;
+  gap: 20rpx;
+  position: relative;
+  z-index: 1;
+}
+
+.action-btn {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(8rpx);
+  color: #fff;
+  border: 1rpx solid rgba(255, 255, 255, 0.25);
+  border-radius: 14rpx;
+  padding: 18rpx 0;
+  font-size: 26rpx;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1;
+  transition: all 0.2s ease;
+}
+
+.action-btn:active {
+  background: rgba(255, 255, 255, 0.32);
+}
+
+/* ================= 成员列表 ================= */
+.member-list {
+  padding: 10rpx 0 40rpx;
+  position: relative;
+  z-index: 1;
+}
+
+/* 空状态覆盖 */
+.empty-state {
+  padding-top: 120rpx;
+}

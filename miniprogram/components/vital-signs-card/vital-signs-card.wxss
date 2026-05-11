@@ -1,0 +1,61 @@
+.vital-signs-card {
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 32rpx;
+  margin: 0 20rpx 20rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.04);
+}
+
+.section-title {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #1A1A1A;
+  margin-bottom: 28rpx;
+  display: flex;
+  align-items: center;
+  gap: 10rpx;
+}
+
+.section-title::before {
+  content: '';
+  width: 6rpx;
+  height: 26rpx;
+  background: linear-gradient(180deg, #07C160, #05a350);
+  border-radius: 3rpx;
+}
+
+.signs-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx;
+}
+
+.sign-item {
+  flex: 1;
+  min-width: 140rpx;
+  background: linear-gradient(135deg, #F8FFFA, #F0FFF4);
+  border-radius: 16rpx;
+  padding: 24rpx 16rpx;
+  text-align: center;
+  transition: all 0.2s ease;
+  border: 1rpx solid rgba(7, 193, 96, 0.06);
+}
+
+.sign-item:active {
+  transform: scale(0.97);
+}
+
+.sign-value {
+  font-size: 40rpx;
+  font-weight: 700;
+  color: #07C160;
+  display: block;
+  margin-bottom: 8rpx;
+  letter-spacing: -1rpx;
+}
+
+.sign-label {
+  font-size: 22rpx;
+  color: #999;
+  font-weight: 500;
+}

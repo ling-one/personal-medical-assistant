@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "member-card": "../../components/member-card/member-card"
+  },
+  "navigationBarTitleText": "首页"
+}

@@ -1,0 +1,13 @@
+<view class="bubble-container {{role}}">
+  <view class="bubble-avatar {{role}}">
+    <text wx:if="{{role === 'user'}}">我</text>
+    <text wx:else>AI</text>
+  </view>
+  <view class="bubble-content">
+    <view class="bubble-text">
+      {{content}}
+      <text wx:if="{{role === 'assistant' && showCursor}}" class="cursor-blink">▍</text>
+    </view>
+    <text class="bubble-time">{{timeStr}}</text>
+  </view>
+</view>
