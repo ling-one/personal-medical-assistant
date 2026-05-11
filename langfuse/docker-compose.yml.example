@@ -6,7 +6,7 @@ services:
     environment:
       POSTGRES_DB: langfuse
       POSTGRES_USER: langfuse
-      POSTGRES_PASSWORD: langfuse123456
+      POSTGRES_PASSWORD: YOUR_POSTGRES_PASSWORD_HERE
     volumes:
       - langfuse-postgres-data:/var/lib/postgresql/data
     ports:
@@ -24,7 +24,7 @@ services:
     environment:
       CLICKHOUSE_DB: default
       CLICKHOUSE_USER: clickhouse
-      CLICKHOUSE_PASSWORD: clickhouse
+      CLICKHOUSE_PASSWORD: YOUR_CLICKHOUSE_PASSWORD_HERE
     volumes:
       - langfuse-clickhouse-data:/var/lib/clickhouse
     ports:
@@ -44,7 +44,7 @@ services:
     command: -c 'mkdir -p /data/langfuse && minio server --address ":9000" --console-address ":9001" /data'
     environment:
       MINIO_ROOT_USER: minio
-      MINIO_ROOT_PASSWORD: miniosecret
+      MINIO_ROOT_PASSWORD: YOUR_MINIO_PASSWORD_HERE
     ports:
       - "9090:9000"
       - "9091:9001"
@@ -84,28 +84,28 @@ services:
     ports:
       - "3000:3000"
     environment:
-      DATABASE_URL: postgresql://langfuse:langfuse123456@postgres:5432/langfuse
+      DATABASE_URL: postgresql://langfuse:YOUR_POSTGRES_PASSWORD_HERE@postgres:5432/langfuse
       REDIS_CONNECTION_STRING: redis://redis:6379
       CLICKHOUSE_URL: http://clickhouse:8123
       CLICKHOUSE_MIGRATION_URL: clickhouse://clickhouse:9000
       CLICKHOUSE_USER: clickhouse
-      CLICKHOUSE_PASSWORD: clickhouse
+      CLICKHOUSE_PASSWORD: YOUR_CLICKHOUSE_PASSWORD_HERE
       CLICKHOUSE_CLUSTER_ENABLED: "false"
-      NEXTAUTH_SECRET: my-super-secret-key-change-me-in-prod
-      SALT: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6
-      ENCRYPTION_KEY: a1b2c3d4e5f67890abcdef1234567890a1b2c3d4e5f67890abcdef1234567890
+      NEXTAUTH_SECRET: YOUR_NEXTAUTH_SECRET_HERE
+      SALT: YOUR_SALT_HERE
+      ENCRYPTION_KEY: YOUR_ENCRYPTION_KEY_HERE
       NEXTAUTH_URL: http://localhost:3000
       LANGFUSE_S3_EVENT_UPLOAD_BUCKET: langfuse
       LANGFUSE_S3_EVENT_UPLOAD_REGION: auto
       LANGFUSE_S3_EVENT_UPLOAD_ACCESS_KEY_ID: minio
-      LANGFUSE_S3_EVENT_UPLOAD_SECRET_ACCESS_KEY: miniosecret
+      LANGFUSE_S3_EVENT_UPLOAD_SECRET_ACCESS_KEY: YOUR_MINIO_SECRET_HERE
       LANGFUSE_S3_EVENT_UPLOAD_ENDPOINT: http://minio:9000
       LANGFUSE_S3_EVENT_UPLOAD_FORCE_PATH_STYLE: "true"
       LANGFUSE_S3_EVENT_UPLOAD_PREFIX: events/
       LANGFUSE_S3_MEDIA_UPLOAD_BUCKET: langfuse
       LANGFUSE_S3_MEDIA_UPLOAD_REGION: auto
       LANGFUSE_S3_MEDIA_UPLOAD_ACCESS_KEY_ID: minio
-      LANGFUSE_S3_MEDIA_UPLOAD_SECRET_ACCESS_KEY: miniosecret
+      LANGFUSE_S3_MEDIA_UPLOAD_SECRET_ACCESS_KEY: YOUR_MINIO_SECRET_HERE
       LANGFUSE_S3_MEDIA_UPLOAD_ENDPOINT: http://minio:9000
       LANGFUSE_S3_MEDIA_UPLOAD_FORCE_PATH_STYLE: "true"
       LANGFUSE_S3_MEDIA_UPLOAD_PREFIX: media/
@@ -124,27 +124,27 @@ services:
       minio:
         condition: service_healthy
     environment:
-      DATABASE_URL: postgresql://langfuse:langfuse123456@postgres:5432/langfuse
+      DATABASE_URL: postgresql://langfuse:YOUR_POSTGRES_PASSWORD_HERE@postgres:5432/langfuse
       REDIS_CONNECTION_STRING: redis://redis:6379
       CLICKHOUSE_URL: http://clickhouse:8123
       CLICKHOUSE_MIGRATION_URL: clickhouse://clickhouse:9000
       CLICKHOUSE_USER: clickhouse
-      CLICKHOUSE_PASSWORD: clickhouse
+      CLICKHOUSE_PASSWORD: YOUR_CLICKHOUSE_PASSWORD_HERE
       CLICKHOUSE_CLUSTER_ENABLED: "false"
-      NEXTAUTH_SECRET: my-super-secret-key-change-me-in-prod
-      SALT: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6
-      ENCRYPTION_KEY: a1b2c3d4e5f67890abcdef1234567890a1b2c3d4e5f67890abcdef1234567890
+      NEXTAUTH_SECRET: YOUR_NEXTAUTH_SECRET_HERE
+      SALT: YOUR_SALT_HERE
+      ENCRYPTION_KEY: YOUR_ENCRYPTION_KEY_HERE
       LANGFUSE_S3_EVENT_UPLOAD_BUCKET: langfuse
       LANGFUSE_S3_EVENT_UPLOAD_REGION: auto
       LANGFUSE_S3_EVENT_UPLOAD_ACCESS_KEY_ID: minio
-      LANGFUSE_S3_EVENT_UPLOAD_SECRET_ACCESS_KEY: miniosecret
+      LANGFUSE_S3_EVENT_UPLOAD_SECRET_ACCESS_KEY: YOUR_MINIO_SECRET_HERE
       LANGFUSE_S3_EVENT_UPLOAD_ENDPOINT: http://minio:9000
       LANGFUSE_S3_EVENT_UPLOAD_FORCE_PATH_STYLE: "true"
       LANGFUSE_S3_EVENT_UPLOAD_PREFIX: events/
       LANGFUSE_S3_MEDIA_UPLOAD_BUCKET: langfuse
       LANGFUSE_S3_MEDIA_UPLOAD_REGION: auto
       LANGFUSE_S3_MEDIA_UPLOAD_ACCESS_KEY_ID: minio
-      LANGFUSE_S3_MEDIA_UPLOAD_SECRET_ACCESS_KEY: miniosecret
+      LANGFUSE_S3_MEDIA_UPLOAD_SECRET_ACCESS_KEY: YOUR_MINIO_SECRET_HERE
       LANGFUSE_S3_MEDIA_UPLOAD_ENDPOINT: http://minio:9000
       LANGFUSE_S3_MEDIA_UPLOAD_FORCE_PATH_STYLE: "true"
       LANGFUSE_S3_MEDIA_UPLOAD_PREFIX: media/

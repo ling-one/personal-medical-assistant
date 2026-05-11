@@ -29,3 +29,19 @@ langfuse/data/
 # 系统文件
 Thumbs.db
 .DS_Store
+
+# 大文件
+医疗对话.txt
+
+# 含密钥/敏感信息的配置文件（请使用 .example 文件作为模板）
+docker-compose.yml
+langfuse/docker-compose.yml
+miniprogram/project.config.json
+
+# 环境变量（绝对不要提交）
+.env
+.env.local
+.env.*.local
+
+# 私有配置
+miniprogram/project.private.config.json
